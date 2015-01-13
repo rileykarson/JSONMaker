@@ -27,7 +27,9 @@ public class JSONReader {
   public static JSONObject readJsonFromUrl(String urlString) throws IOException, JSONException {  
 	   URL url = new URL(urlString);
 	   HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-	   urlConnection.addRequestProperty("Authorization", "OAuth nn9ogaqhspw6mr2y3fiunuat");
+	   //Unique OAuth key here.
+	   String key = "";
+	   urlConnection.addRequestProperty("Authorization", "OAuth " + key);
 	   try {
 	     InputStream is = new BufferedInputStream(urlConnection.getInputStream());
 	     BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
